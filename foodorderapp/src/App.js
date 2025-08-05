@@ -18,10 +18,11 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<AboutUs />} />
           <Route path="contact" element={<ContactUs />} />
-          <Route path="/restaurants/:name" element={<Menu/>}/> 
+          <Route path="/restaurants/:name" element={<Menu />}/> 
           <Route path="/offers" element={<Offers/>}/> 
           <Route path="/help" element={<Help/>}/> 
         </Route>
+
       </Routes>
       
     </BrowserRouter>
