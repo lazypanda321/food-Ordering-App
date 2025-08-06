@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/lazypanda321/food-Ordering-App/static/css/main.f1a84e67.css",
+    "main.js": "/lazypanda321/food-Ordering-App/static/js/main.328cbe2b.js",
+    "static/js/453.cd8dc6cb.chunk.js": "/lazypanda321/food-Ordering-App/static/js/453.cd8dc6cb.chunk.js",
+    "index.html": "/lazypanda321/food-Ordering-App/index.html",
+    "main.f1a84e67.css.map": "/lazypanda321/food-Ordering-App/static/css/main.f1a84e67.css.map",
+    "main.328cbe2b.js.map": "/lazypanda321/food-Ordering-App/static/js/main.328cbe2b.js.map",
+    "453.cd8dc6cb.chunk.js.map": "/lazypanda321/food-Ordering-App/static/js/453.cd8dc6cb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f1a84e67.css",
+    "static/js/main.328cbe2b.js"
+  ]
+}
