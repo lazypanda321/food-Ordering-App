@@ -12,6 +12,7 @@ const Layout = () => {
         <Link to="/">Home</Link>
         <Link to="/about">About Us</Link>
         <Link to="/contact">Contact</Link>
+        {/* <Link to="/cart">Cart</Link> */}
       </nav>
       <Outlet />
        <Footer />

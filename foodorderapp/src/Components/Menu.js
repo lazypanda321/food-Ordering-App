@@ -1,49 +1,45 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import restaurants from "./Restaurants";
+import {useDispatch} from 'react-redux'
+import {addToCart} from './Cart Functionality/addToCart'
 
-function Menu({restaurants}) {
-  const foodMenu = [
+
+function Menu() {
+  /* const foodMenu = [
     { id: 1, name: 'Burger', price: 120, image: 'https://thumbs.dreamstime.com/b/tasty-burger-french-fries-fire-close-up-home-made-flames-137249900.jpg' },
     { id: 2, name: 'Pizza', price: 250, image: 'https://septemberfarmcheese.b-cdn.net/wp-content/uploads/Blogs/Homemade-Pizza/homemade-pizza-monterey-jack-cheese.jpg' },
     { id: 3, name: 'Fries', price: 90, image: 'https://media.istockphoto.com/id/614420426/photo/basket-of-french-fries.jpg?s=612x612&w=0&k=20&c=o6IZg_NPJkOaICTa883jd49BwZvvI7wlP6SnjhyxqsI=' },
-  ];
-
-
-  
+  ]; */
   const [cart, setCart] = useState([]);
+  const { name } = useParams()
+  const dispatch = useDispatch()
+  const restaurant = restaurants.find((res)=> res.name === name)
 
-  //// Get restaurant name from URL
-  const { name: encodedName } = useParams();
-  const name = decodeURIComponent(encodedName);
+  if (!restaurant) {
+    return (
+      <div>Restaurant ${name} not found</div> //?///
+    )
+  }
 
-  console.log(name)
-// // Find the matching restaurant object
-  /* const restaurant = restaurantList.find(
-    (resto) => resto.name.toLowerCase() === name.toLowerCase()
-  ); */
-
-  // If no match found
-  /* if (!restaurant) {
-    return <h2>Restaurant not found</h2>;
-  } */
-
-  const addToCart = (item) => {
-    setCart([...cart, item]);
+  const handleAddToCart = (item) => {
+    /* setCart([...cart, item]); */
+    dispatch (addToCart(item))
     alert(`${item.name} added to cart!`);
   };
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.title}>Welcome to <span style={{ color: '#ff6347' }}>{name}</span></h1>
+      <h1 style={styles.title}>Welcome to <span style={{ color: '#ff6347' }}>{restaurant.name}</span></h1>
       <h1 style={styles.subtitle}>Explore Our Delicious Menu</h1>
 
       <div style={styles.menuGrid}>
-        {foodMenu.map((item) => (
-          <div key={item.id} style={styles.card}>
+        {restaurant.menu.map((item) => (
+          <div key={item.menuid} style={styles.card}>
             <img src={item.image} alt={item.name} style={styles.image} />
             <h3 style={styles.itemName}>{item.name}</h3>
             <p style={styles.price}>₹{item.price}</p>
-            <button style={styles.button} onClick={() => addToCart(item)}>Add to Cart</button>
+            <button style={styles.button} onClick={() => handleAddToCart(item)}>Add to Cart</button>
           </div>
         ))}
       </div>

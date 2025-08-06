@@ -14,7 +14,7 @@ const Header = () => {
     <h2 onClick={()=>navigate(`/offers`)}>Offer 🏷️ </h2>
     <h2 onClick={()=>navigate(`/help`)}>Help ❓</h2>
     <h2>SignIn 👤</h2>
-    <h2>Cart 🛒</h2>
+    <h2 onClick={()=>navigate(`/cart`)}>Cart 🛒</h2>
   </div>
 
  )

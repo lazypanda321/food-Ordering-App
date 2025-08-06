@@ -21,6 +21,7 @@ function App() {
           <Route path="/restaurants/:name" element={<Menu />}/> 
           <Route path="/offers" element={<Offers/>}/> 
           <Route path="/help" element={<Help/>}/> 
+          <Route path="cart" element={<Cart />} />
         </Route>
 
       </Routes>
